@@ -14,7 +14,7 @@ end
 
 function Base.read(fpath::String, ::Type{Vector{Elf}})
     file = read(fpath, String)
-    str_array = split.(file, '\n'; keepempty=true)
+    str_array = split(file, '\n'; keepempty=true)
     str_array = replace.(str_array, "\r" => "")
     elfs = Vector{Elf}()
     elf = Elf()
